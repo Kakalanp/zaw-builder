@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/zaw-builder/static/css/main.fef8bee3.css",
-    "main.js": "/zaw-builder/static/js/main.c4659a26.js",
+    "main.css": "/zaw-builder/static/css/main.344b7f8d.css",
+    "main.js": "/zaw-builder/static/js/main.f55568f0.js",
     "static/media/vargeet-jai-2.png": "/zaw-builder/static/media/vargeet-jai-2.5c78986a1ec7e3d89d23.png",
     "static/media/ekwana-jai-2.png": "/zaw-builder/static/media/ekwana-jai-2.a7fd777a25ef5bfe7c26.png",
     "static/media/ekwana-2-ruhang.png": "/zaw-builder/static/media/ekwana-2-ruhang.445ceed4ff6d9c8916ff.png",
@@ -60,12 +60,13 @@
     "static/media/plague-bokwin.png": "/zaw-builder/static/media/plague-bokwin.2173a3b132cda8fbd934.png",
     "static/media/jayap.png": "/zaw-builder/static/media/jayap.18408067018b7053d184.png",
     "static/media/sepfahn.png": "/zaw-builder/static/media/sepfahn.bbb340589221caa436ca.png",
+    "static/media/share.svg": "/zaw-builder/static/media/share.68e36f564cb07ce352dc106752ce64d5.svg",
     "index.html": "/zaw-builder/index.html",
-    "main.fef8bee3.css.map": "/zaw-builder/static/css/main.fef8bee3.css.map",
-    "main.c4659a26.js.map": "/zaw-builder/static/js/main.c4659a26.js.map"
+    "main.344b7f8d.css.map": "/zaw-builder/static/css/main.344b7f8d.css.map",
+    "main.f55568f0.js.map": "/zaw-builder/static/js/main.f55568f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.fef8bee3.css",
-    "static/js/main.c4659a26.js"
+    "static/css/main.344b7f8d.css",
+    "static/js/main.f55568f0.js"
   ]
 }
