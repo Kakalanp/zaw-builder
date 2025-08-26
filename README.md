@@ -44,7 +44,6 @@ To get a local copy of the project up and running follow these simple example st
 
 ### 👤 Joaquin G.L. Zanetti
 - <img alt="Github" width="22px" src="https://github.com/get-icon/geticon/raw/master/icons/github-icon.svg" /> GitHub: [@Kakalanp](https://github.com/Kakalanp)
-- <img alt="Twitter" width="22px" src="https://github.com/get-icon/geticon/raw/master/icons/twitter.svg" /> Twitter: [@LeccaJoaquin](https://twitter.com/LeccaJoaquin)
 - <img alt="LinkedIn" width="22px" src="https://github.com/get-icon/geticon/raw/master/icons/linkedin-icon.svg" /> LinkedIn: [Joaquín Garrido Lecca Zanetti](https://www.linkedin.com/in/joaquin-garrido-lecca-zanetti/)
 
 ## Contributing: 🤝
