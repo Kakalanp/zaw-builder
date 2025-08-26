@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zaw-builder/static/css/main.344b7f8d.css",
-    "main.js": "/zaw-builder/static/js/main.f55568f0.js",
+    "main.js": "/zaw-builder/static/js/main.f3239fdc.js",
     "static/media/vargeet-jai-2.png": "/zaw-builder/static/media/vargeet-jai-2.5c78986a1ec7e3d89d23.png",
     "static/media/ekwana-jai-2.png": "/zaw-builder/static/media/ekwana-jai-2.a7fd777a25ef5bfe7c26.png",
     "static/media/ekwana-2-ruhang.png": "/zaw-builder/static/media/ekwana-2-ruhang.445ceed4ff6d9c8916ff.png",
@@ -63,10 +63,10 @@
     "static/media/share.svg": "/zaw-builder/static/media/share.68e36f564cb07ce352dc106752ce64d5.svg",
     "index.html": "/zaw-builder/index.html",
     "main.344b7f8d.css.map": "/zaw-builder/static/css/main.344b7f8d.css.map",
-    "main.f55568f0.js.map": "/zaw-builder/static/js/main.f55568f0.js.map"
+    "main.f3239fdc.js.map": "/zaw-builder/static/js/main.f3239fdc.js.map"
   },
   "entrypoints": [
     "static/css/main.344b7f8d.css",
-    "static/js/main.f55568f0.js"
+    "static/js/main.f3239fdc.js"
   ]
 }
