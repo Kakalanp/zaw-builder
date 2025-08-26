@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import { ReactComponent as Share } from '../assets/icons/share.svg'
 import getExtraStats from '../modules/helperFunctions'
 import grips from '../modules/grip'
 import links from '../modules/link'
 import strikes from '../modules/strike'
+import PropTypes from 'prop-types'
 
-const App = () => {
-  const [zawParts, setZawParts] = useState({
+const BASE_URL = 'https://kakalanp.github.io/zaw-builder'
+
+const App = ({ initialZawParts }) => {
+  const [zawParts, setZawParts] = useState(() => initialZawParts || {
     strike: {},
     grip: {},
     link: {}
@@ -51,7 +55,6 @@ const App = () => {
     setZawParts({ ...zawParts, [piece]: { ...part } })
   }
 
-  // this function is only called once in one place, but the scope will change in later versions.
   function createZaw () {
     const finalDamageMultiplier = zawParts.grip.type ? zawParts.strike.twoHandedMultiplier : 1
     const zawType = zawParts.grip.type ? zawParts.strike.type2 : zawParts.strike.type1
@@ -97,6 +100,10 @@ const App = () => {
         rotatedElements[0].classList.remove('rotated')
       }
     } else e.target.classList.toggle('rotated')
+  }
+
+  const copyZawToClipboard = () => {
+    console.log(`sharing: ${BASE_URL}/${zawParts.strike.name.replace(/\s+/g, '-')}/${zawParts.grip.name.replace(/\s+/g, '-')}/${zawParts.link.name.replace(/\s+/g, '-')}`)
   }
 
   let orb = ''
@@ -221,6 +228,7 @@ const App = () => {
         </div>
       </div>
       <div id='zaw-stats' className='disabled' tabIndex="0">
+        <Share onClick={copyZawToClipboard} />
         <h3>PRIMARY:</h3>
         <p>Type: {zawStats.type}</p>
         <p>Speed: {zawStats.speed}</p>
@@ -238,6 +246,14 @@ const App = () => {
 
     </>
   )
+}
+
+App.propTypes = {
+  initialZawParts: PropTypes.shape({
+    strike: PropTypes.object,
+    grip: PropTypes.object,
+    link: PropTypes.object
+  })
 }
 
 export default App
