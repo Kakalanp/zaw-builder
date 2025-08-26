@@ -12,9 +12,9 @@ With [ZawBuilder](https://kakalanp.github.io/zaw-builder/), you can do the follo
   - A new menu will appear, here you can select a piece that can fit into the selected slot. There are many options in each category so take your time!
   - If one looks appealing to you, make sure to click it so it turns around and shows you its stats (Pro tip: you can turn more than one at a time)
   - Click your selected piece again to select it, you'll return to the main menu with your selected piece for the slot and are now able to select the other two.
-- ### ~~Share your Zaw~~
-  - ~~If you have a complete build and want to share your combination with a friend, click the top-right button to copy the link to it!~~
-  - ~~Now you can paste a link to your Zaw anywhere, it is that simple!~~
+- ### Share your Zaw
+  - If you have a complete build and want to share your combination with a friend, click the top-right button to copy the link to it!
+  - Now you can paste a link to your Zaw anywhere, it is that simple!
 - ### Modify a Zaw:
   - If you didn't like the final result of your Zaw, you can always click on a piece to swap it with another one!
   - This time, in the piece selection screen, you should be able to see your current Zaw stats at the right.
