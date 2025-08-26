@@ -103,7 +103,13 @@ const App = ({ initialZawParts }) => {
   }
 
   const copyZawToClipboard = () => {
-    console.log(`sharing: ${BASE_URL}/${zawParts.strike.name.replace(/\s+/g, '-')}/${zawParts.grip.name.replace(/\s+/g, '-')}/${zawParts.link.name.replace(/\s+/g, '-')}`)
+    navigator.clipboard.writeText(
+      `${BASE_URL}/${zawParts.strike.name.replace(/\s+/g, '-')}/${zawParts.grip.name.replace(/\s+/g, '-')}/${zawParts.link.name.replace(/\s+/g, '-')}`
+    ).then(() => {
+      console.log('✅ Link copied to clipboard!')
+    }).catch(err => {
+      console.error('❌ Failed to copy: ', err)
+    })
   }
 
   let orb = ''
