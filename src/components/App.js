@@ -18,10 +18,12 @@ const App = ({ initialZawParts }) => {
 
   const [zawStats, setZawStats] = useState({})
 
+  const builtZaw = ((Object.keys(zawParts.strike).length !== 0) &&
+  (Object.keys(zawParts.grip).length !== 0) &&
+  (Object.keys(zawParts.link).length !== 0))
+
   useEffect(() => {
-    if ((Object.keys(zawParts.strike).length !== 0) &&
-        (Object.keys(zawParts.grip).length !== 0) &&
-        (Object.keys(zawParts.link).length !== 0)) {
+    if (builtZaw) {
       createZaw()
       document.getElementById('zaw-stats').classList.remove('disabled')
     }
@@ -129,8 +131,11 @@ const App = ({ initialZawParts }) => {
   }
 
   const handleEvent = (e, piece, part) => {
-    e.target.classList.contains('rotated') && setTimeout(SelectPiece, 500, piece, part)
-    rotate(e)
+    if (e.target.classList.contains('rotated')) {
+      if (e.target.classList.contains('active')) {
+        setTimeout(SelectPiece, 500, piece, part)
+      } else rotate(e) // set new classname and start comparison logic
+    } else rotate(e)
   }
 
   return (
