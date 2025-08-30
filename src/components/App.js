@@ -24,7 +24,7 @@ const App = ({ initialZawParts }) => {
 
   useEffect(() => {
     if (builtZaw) {
-      createZaw()
+      createZaw(zawParts.strike, zawParts.grip, zawParts.link)
       document.getElementById('zaw-stats').classList.remove('disabled')
     }
   }, [zawParts])
@@ -57,24 +57,24 @@ const App = ({ initialZawParts }) => {
     setZawParts({ ...zawParts, [piece]: { ...part } })
   }
 
-  function createZaw () {
-    const finalDamageMultiplier = zawParts.grip.type ? zawParts.strike.twoHandedMultiplier : 1
-    const zawType = zawParts.grip.type ? zawParts.strike.type2 : zawParts.strike.type1
-    const zawDamage = ((zawParts.strike.dmg + zawParts.grip.dmgMod + zawParts.link.dmgMod) * finalDamageMultiplier).toFixed()
+  function createZaw (strike, grip, link) {
+    const finalDamageMultiplier = grip.type ? strike.twoHandedMultiplier : 1
+    const zawType = grip.type ? strike.type2 : strike.type1
+    const zawDamage = ((strike.dmg + grip.dmgMod + link.dmgMod) * finalDamageMultiplier).toFixed()
     const zawExtraStats = getExtraStats(zawType)
     setZawStats({
-      speed: (zawParts.grip.speed + zawParts.strike.spdMod + zawParts.link.spdMod).toFixed(3),
+      speed: (grip.speed + strike.spdMod + link.spdMod).toFixed(3),
       type: zawType,
       // DMG
       dmgTotal: zawDamage,
-      dmgType: zawParts.strike.dmgType,
-      crtChance: zawParts.strike.critChance + zawParts.link.crtMod,
-      crtMultiplier: zawParts.strike.critMulti.toFixed(1),
-      statusChance: zawParts.strike.statusChance + zawParts.link.stsMod,
-      slash: Math.round((zawDamage * (zawParts.strike.slash / 100)) * 10) / 10,
-      impact: Math.round((zawDamage * (zawParts.strike.impact / 100)) * 10) / 10,
-      puncture: Math.round((zawDamage * (zawParts.strike.puncture / 100)) * 10) / 10,
-      viral: Math.round((zawDamage * (zawParts.strike.viral / 100)) * 10) / 10,
+      dmgType: strike.dmgType,
+      crtChance: strike.critChance + link.crtMod,
+      crtMultiplier: strike.critMulti.toFixed(1),
+      statusChance: strike.statusChance + link.stsMod,
+      slash: Math.round((zawDamage * (strike.slash / 100)) * 10) / 10,
+      impact: Math.round((zawDamage * (strike.impact / 100)) * 10) / 10,
+      puncture: Math.round((zawDamage * (strike.puncture / 100)) * 10) / 10,
+      viral: Math.round((zawDamage * (strike.viral / 100)) * 10) / 10,
       // heavy attack
       heavyDmg: zawExtraStats.heavyMultiplier * zawDamage,
       heavySlamAtk: zawExtraStats.heavySlamMultiplier * zawDamage,
@@ -82,8 +82,8 @@ const App = ({ initialZawParts }) => {
       heavySlamRadius: 'WIP', // No info on wiki, have to do my own research
       windUp: zawExtraStats.windUp,
       // extras
-      stancePolarity: zawParts.grip.type ? zawParts.strike.polarity2 : zawParts.strike.polarity1,
-      range: zawParts.grip.type ? zawParts.strike.range2 : zawParts.strike.range1,
+      stancePolarity: grip.type ? strike.polarity2 : strike.polarity1,
+      range: grip.type ? strike.range2 : strike.range1,
       slamAtk: zawExtraStats.slamMultiplier * zawDamage,
       slamRadialDmg: zawDamage,
       slamRadius: `${zawExtraStats.slamRadius}m`,
