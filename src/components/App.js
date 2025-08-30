@@ -94,14 +94,12 @@ const App = ({ initialZawParts }) => {
     })
   }
 
-  const rotate = (e) => {
-    if (e.target.classList.contains('rotated')) {
-      const rotatedElements = document.getElementsByClassName('rotated')
-      const rotatedElementsCount = rotatedElements.length
-      for (let i = 0; i < rotatedElementsCount; i++) {
-        rotatedElements[0].classList.remove('rotated')
-      }
-    } else e.target.classList.toggle('rotated')
+  const singleOutClassName = (e, className) => {
+    const elements = document.getElementsByClassName(className)
+    const elementsCount = elements.length
+    for (let i = 0; i < elementsCount; i++) {
+      elements[0].classList.remove(className)
+    } e.target.classList.toggle(className)
   }
 
   const copyZawToClipboard = () => {
@@ -132,10 +130,17 @@ const App = ({ initialZawParts }) => {
 
   const handleEvent = (e, piece, part) => {
     if (e.target.classList.contains('rotated')) {
-      if (e.target.classList.contains('active')) {
+      if (builtZaw) {
+        if (e.target.classList.contains('active')) {
+          setTimeout(SelectPiece, 500, piece, part)
+        } else {
+          singleOutClassName(e, 'active')
+        } // start comparison logic
+      } else {
         setTimeout(SelectPiece, 500, piece, part)
-      } else rotate(e) // set new classname and start comparison logic
-    } else rotate(e)
+      }
+      singleOutClassName(e, 'rotated')
+    } else e.target.classList.add('rotated')
   }
 
   return (

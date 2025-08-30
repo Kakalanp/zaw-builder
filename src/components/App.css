@@ -232,3 +232,7 @@ img {
 .rotated {
   transform: rotateY(180deg);
 }
+
+.active {
+  border: red solid 5px;
+}
